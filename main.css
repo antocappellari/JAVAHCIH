@@ -1,0 +1,69 @@
+@charset "UTF-8";
+/* Diseño body de todas las páginas*/
+body {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr;
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+  align-content: center;
+  background-image: url(../img/fondo7.jpg);
+  Background-size: cover; }
+
+.header {
+  grid-row-start: 0;
+  grid-row-end: 1; }
+
+.main {
+  grid-row-start: 1;
+  grid-row-end: 2; }
+
+div.container {
+  padding: 0; }
+
+/* especificos diseño botones*/
+.btn, .btn--login, .btn--search {
+  border: 2px solid whitesmoke;
+  background-color: transparent;
+  color: whitesmoke;
+  text-align: center;
+  border-radius: 8px; }
+
+.btn:hover, .btn--login:hover, .btn--search:hover {
+  background-color: rgba(245, 245, 245, 0.897);
+  color: grey; }
+
+.btn--login {
+  width: 60%; }
+
+.btn--search {
+  width: 100%; }
+
+.footer {
+  grid-row-start: 2;
+  grid-row-end: 3;
+  display: flex;
+  align-content: baseline;
+  color: #eeeaea;
+  font-family: "Calibri", sans-serif;
+  margin: 5px;
+  padding: 5px;
+  background-color: rgba(18, 19, 19, 0.5); }
+
+/* especificos diseño redes sociales*/
+.fa-twitter {
+  background-color: #e3ecf3; }
+
+.fa-instagram {
+  background-color: #dfd5dc; }
+
+.fa fa-twitter {
+  color: white;
+  height: 15px;
+  width: 15px; }
+
+.fa fa-instagram {
+  color: white;
+  height: 15px;
+  width: 15px; }
