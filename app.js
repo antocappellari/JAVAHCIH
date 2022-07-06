@@ -8,7 +8,7 @@ submit.addEventListener('click',() => {
     console.log(inputName.value)
     console.log(inputemail.value)
     console.log(inputmessage.value)
-    alert("Thank you for contacting us! We'll aswer you ASAP")
+    Swal.fire("Thank you for contacting us! We'll aswer you ASAP")
 })
 
 //Variables registro (User & Password)
@@ -20,8 +20,10 @@ Registerbtn.addEventListener('click',() => {
 function store() {
     localStorage.setItem('UserR', UserR.value);
     localStorage.setItem('PasswordR', PasswordR.value);
-    alert("You've been registered")}
-})
+    Swal.fire({
+        title:"You've been registered",
+        icon:"success"})
+}})
 //Variables Log in (User & Password)
 var User = document.getElementById('#User');
 var Password = document.getElementById('#Password');
@@ -33,9 +35,13 @@ Loginbtn.addEventListener('click',() => {
         var passwordstorage = localStorage.getItem('#PasswordR');
                    
             if(User.value == userstorage || Password.value == passwordstorage) {
-                alert('You are logged in');
+                Swal.fire("You've been registered");
             }else {
-                alert('You are not a registered user');
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'You are not a registered user!',
+                  });
             }
         }
 })
