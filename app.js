@@ -5,11 +5,41 @@ const inputmessage = document.querySelector('#message')
 const submit = document.querySelector('#Submitbtn')
 
 submit.addEventListener('click',() => {
-    console.log(inputName.value)
-    console.log(inputemail.value)
-    console.log(inputmessage.value)
+    console.log(formsubmit)
     Swal.fire("Thank you for contacting us! We'll aswer you ASAP")
 })
+
+function formsubmit(e){
+    e.preventDefault()
+    const formData = new formData();
+    formData.append(
+      'name',
+      inputName.value
+    )
+    formData.append(
+      'email',
+      inputemail.value
+    )
+    formData.append(
+        'message',
+        inputmessage.value
+      )
+}
+
+fetch('https://github.com/antocappellari/JAVAHCIH/blob/main/index.html', {
+    method:'post',
+    body: JSON.stringify({
+        title:'contact form',
+        body:formData,
+        userid:1,}),
+    headers: {
+        'Content-Type': 'aplication/json;charset=UTF-8',},
+})
+.then((response)=>response.json)
+.then((data)=>{
+    console.log(data)
+})
+.catch((error)=> console.log(error))
 
 //Variables registro (User & Password)
 var UserR = document.getElementById('#UserR');
@@ -45,6 +75,9 @@ Loginbtn.addEventListener('click',() => {
             }
         }
 })
+
+const url1 ='https://github.com/antocappellari/JAVAHCIH/blob/main/index.html'
+
 
 
 
